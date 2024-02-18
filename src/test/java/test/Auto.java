@@ -10,17 +10,19 @@ public class Auto {
 	static int cantidadCreados;
 	
 	public int cantidadAsientos() {
-		return asientos.length;
+		int i=0;
+		for (int j = 0;j<asientos.length;j++) {
+			if( asientos[j] instanceof Asiento  ) {
+				i++;
+			}
+		}
+		return i;
 	}
 	public String verificarIntegridad() {
-		String prueba = null;
+		String prueba = "Auto origina";
 		for (int i = 0;i<asientos.length;i++) {
-			if ((asientos[i].registro!=registro) || (registro!=motor.registro)) {
-				prueba ="Las piezas no son originales";
-				break;
-			}
-			else {
-				prueba ="Auto original";
+			if ((asientos[i].registro != registro) || (registro!=motor.registro)) {
+				prueba = "Las piezas no son originales";
 			}
 		}
 		return prueba;
