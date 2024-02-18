@@ -21,9 +21,12 @@ public class Auto {
 	public String verificarIntegridad() {
 		String prueba = "Auto origina";
 		for (int i = 0;i<asientos.length;i++) {
-			if ((asientos[i].registro != registro) || (registro!=motor.registro)) {
-				prueba = "Las piezas no son originales";
+			if( asientos[i] instanceof Asiento  ) {
+				if ((asientos[i].registro != registro) || (registro!=motor.registro)) {
+					prueba = "Las piezas no son originales";
+				}
 			}
+			
 		}
 		return prueba;
 	}
